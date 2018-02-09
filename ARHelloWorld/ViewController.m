@@ -26,8 +26,7 @@
   [super viewDidLoad];
 
   // Add AR Scene view
-  self.sceneView = [[ARSCNView alloc] initWithFrame:self.view.frame];
-  [self.view addSubview:self.sceneView];
+  [self setupSceneView];
   
   // Set the view's delegate
   self.sceneView.delegate = self;
@@ -40,6 +39,17 @@
   
   // Set the scene to the view
   self.sceneView.scene = scene;
+}
+
+- (void)setupSceneView {
+  self.sceneView = [[ARSCNView alloc] initWithFrame:self.view.frame];
+  [self.view addSubview:self.sceneView];
+  
+//  self.sceneView.translatesAutoresizingMaskIntoConstraints = false;
+//  self.sceneView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true;
+//  self.sceneView.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true;
+//  self.sceneView.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true;
+//  self.sceneView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
